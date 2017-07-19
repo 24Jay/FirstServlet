@@ -1,6 +1,8 @@
 /home/jay/workspace/first.servlet/src/main/java/com/head/first/servlet/listener/ListenerServlet.java
 /home/jay/workspace/first.servlet/src/main/java/com/head/first/servlet/listener/Dog.java
 /home/jay/workspace/first.servlet/src/main/java/com/head/first/servlet/DownloadServlet.java
+/home/jay/workspace/first.servlet/src/main/java/com/head/first/servlet/MyFilter.java
+/home/jay/workspace/first.servlet/src/main/java/com/head/first/servlet/MyHttpRequestWrapper.java
 /home/jay/workspace/first.servlet/src/main/java/com/head/first/servlet/BeerSelect.java
 /home/jay/workspace/first.servlet/src/main/java/com/head/first/servlet/listener/MyServletContextListener.java
 /home/jay/workspace/first.servlet/src/main/java/com/head/first/servlet/BeerExpert.java

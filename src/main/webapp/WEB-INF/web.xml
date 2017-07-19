@@ -4,6 +4,7 @@
 	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd">
 	<display-name>Servlet Web Application</display-name>
 
+	<!-- 设置servlet及其映射 -->
 	<servlet>
 		<servlet-name>beerSelect</servlet-name>
 		<servlet-class>com.head.first.servlet.BeerSelect</servlet-class>
@@ -17,6 +18,7 @@
 	<servlet>
 		<servlet-name>download</servlet-name>
 		<servlet-class>com.head.first.servlet.DownloadServlet</servlet-class>
+		<!-- ServletConfig参数 -->
 		<init-param>
 			<param-name>email</param-name>
 			<param-value>24zhangjie@gmail.com</param-value>
@@ -28,8 +30,6 @@
 	</servlet-mapping>
 
 
-
-
 	<servlet>
 		<servlet-name>liste</servlet-name>
 		<servlet-class>com.head.first.servlet.listener.ListenerServlet</servlet-class>
@@ -39,21 +39,59 @@
 		<url-pattern>/listen</url-pattern>
 	</servlet-mapping>
 
+	<!-- 设置jsp servlet -->
+	<servlet>
+		<servlet-name>res</servlet-name>
+		<jsp-file>/jsps/jspServlet.jsp</jsp-file>
+		<init-param>
+			<param-name>username</param-name>
+			<param-value>KobeBryant</param-value>
+		</init-param>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>res</servlet-name>
+		<url-pattern>/jspServlet</url-pattern>
+	</servlet-mapping>
 
-	<!-- context-param> <param-name>email</param-name> <param-value>24zhangjie@gmail.com</param-value> 
-		</context-param -->
+	<servlet>
+		<servlet-name>reslt</servlet-name>
+		<jsp-file>/jsps/result.jsp</jsp-file>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>reslt</servlet-name>
+		<url-pattern>/myreslt</url-pattern>
+	</servlet-mapping>
+
+	<!-- 设置整个web应用的context参数 -->
+	<context-param>
+		<param-name>email</param-name>
+		<param-value>24zhangjie@gmail.com</param-value>
+	</context-param>
 	<context-param>
 		<param-name>breed</param-name>
 		<param-value>Dog'sBreed</param-value>
 	</context-param>
 
 
+	<!-- 设置servletContextListener -->
 	<listener>
 		<listener-class>
 			com.head.first.servlet.listener.MyServletContextListener
 		</listener-class>
 	</listener>
 
+
+	<!-- 配置filter -->
+	<filter>
+		<filter-name>selectFilter</filter-name>
+		<filter-class>com.head.first.servlet.MyFilter</filter-class>
+	</filter>
+	<filter-mapping>
+		<filter-name>selectFilter</filter-name>
+		<url-pattern>/myreslt</url-pattern>
+	</filter-mapping>
+
+	<!-- 安全 -->
 
 	<security-role>
 		<role-name>Admin</role-name>
@@ -65,35 +103,30 @@
 		<role-name>Guest</role-name>
 	</security-role>
 
-	<login-config>
-		<auth-method>FORM</auth-method>
-		<form-login-config>
-			<form-login-page>/log/login.html</form-login-page>
-			<form-error-page>/log/loginerr.html</form-error-page>
-		</form-login-config>
-	</login-config>
-
 	<security-constraint>
 		<web-resource-collection>
 			<web-resource-name>beer</web-resource-name>
-			<url-pattern>/selection</url-pattern>
+			<url-pattern>/selection/*</url-pattern>
 			<url-pattern>/listen</url-pattern>
 			<url-pattern>/down</url-pattern>
-
-			<http-method>GET</http-method>
+			<!-- ttp-method>GET</http-method -->
 			<http-method>POST</http-method>
 		</web-resource-collection>
-
 		<auth-constraint>
 			<role-name>Admin</role-name>
 			<role-name>Member</role-name>
 			<role-name>Guest</role-name>
 		</auth-constraint>
-
-
-		<user-data-constraint>
-			<transport-guarantee>CONFIDENTIAL</transport-guarantee>
-		</user-data-constraint>
+		<!-- user-data-constraint> <transport-guarantee>CONFIDENTIAL</transport-guarantee> 
+			</user-data-constraint -->
 	</security-constraint>
+
+
+	<login-config>
+		<auth-method>BASIC</auth-method>
+		<!-- form-login-config> <form-login-page>/log/login.html</form-login-page> 
+			<form-error-page>/log/loginerr.html</form-error-page> </form-login-config -->
+		<realm-name>UserDatabase</realm-name>
+	</login-config>
 
 </web-app>

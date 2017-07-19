@@ -1,7 +1,6 @@
 package com.head.first.servlet;
 
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.util.List;
 
 import javax.servlet.RequestDispatcher;
@@ -10,20 +9,16 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import org.w3c.dom.css.Counter;
-
 public class BeerSelect extends HttpServlet
 {
 	public static int Counter = 0;
 
-	@Override
-	protected void doGet(HttpServletRequest req, HttpServletResponse resp)
-			throws ServletException, IOException
-	{
-		PrintWriter out = resp.getWriter();
-		out.println("Visited Times=" + Counter++);
-	}
-
+	/*
+	 * @Override protected void doGet(HttpServletRequest req,
+	 * HttpServletResponse resp) throws ServletException, IOException {
+	 * PrintWriter out = resp.getWriter(); out.println("Visited Times=" +
+	 * Counter++); }
+	 */
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp)
 			throws ServletException, IOException
@@ -34,9 +29,13 @@ public class BeerSelect extends HttpServlet
 		List<String> brands = expert.getBrand(co);
 
 		req.setAttribute("styles", brands);
-
-		RequestDispatcher view = req.getRequestDispatcher("result.jsp");
-		view.forward(req, resp);
+		//PrintWriter out = resp.getWriter();
+		//out.println(req.getAttribute("styles"));
+		
+//		MyHttpRequestWrapper requestWrapper = new MyHttpRequestWrapper(req);
+		 RequestDispatcher view = req.getRequestDispatcher("/myreslt");
+		 view.forward(req, resp);
+		 
 
 		// resp.setContentType("text/html");
 		/*

@@ -7,9 +7,9 @@ import org.w3c.dom.css.ElementCSSInlineStyle;
 
 public class BeerExpert
 {
-	public List getBrand(String color)
+	public List<String> getBrand(String color)
 	{
-		List list = new ArrayList<String>();
+		List<String> list = new ArrayList<String>();
 
 		if (color.equals("amber"))
 		{
