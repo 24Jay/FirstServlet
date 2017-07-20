@@ -1,4 +1,4 @@
-package com.head.first.servlet;
+package com.head.first.servlet.filter;
 
 import java.io.IOException;
 

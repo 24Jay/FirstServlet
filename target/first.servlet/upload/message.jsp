@@ -3,9 +3,11 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Insert title here</title>
+<title>文件上传结果</title>
 </head>
 <body>
-	<h2>This is a test page</h2>
+	<center>
+		<h2>${message}</h2>
+	</center>
 </body>
 </html>

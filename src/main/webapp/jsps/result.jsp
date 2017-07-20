@@ -12,7 +12,9 @@
 	<p>
 
 		<%
-			List<String> styles = (List)request.getAttribute("styles");
+			String s = request.getParameter("color");
+			out.println("s=" + s);
+			List<String> styles = (List) request.getAttribute("styles");
 			Iterator it = styles.iterator();
 			while (it.hasNext())
 				out.print("<br> try: " + it.next());

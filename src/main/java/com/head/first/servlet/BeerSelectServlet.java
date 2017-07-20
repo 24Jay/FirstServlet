@@ -9,7 +9,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-public class BeerSelect extends HttpServlet
+public class BeerSelectServlet extends HttpServlet
 {
 	public static int Counter = 0;
 

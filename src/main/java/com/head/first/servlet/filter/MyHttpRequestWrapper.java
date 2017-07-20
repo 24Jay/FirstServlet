@@ -1,4 +1,4 @@
-package com.head.first.servlet;
+package com.head.first.servlet.filter;
 
 import java.util.Map;
 
@@ -7,18 +7,22 @@ import javax.servlet.http.HttpServletRequestWrapper;
 
 public class MyHttpRequestWrapper extends HttpServletRequestWrapper
 {
-//	private Map<String, String[]> params;
+	// private Map<String, String[]> params;
 
 	public MyHttpRequestWrapper(HttpServletRequest request)
 	{
 		super(request);
-//		params.putAll(request.getParameterMap());
+		// params.putAll(request.getParameterMap());
 	}
 
 	@Override
 	public String getParameter(String name)
 	{
 		String value = super.getParameter(name);
+		if ("color".equals(name))
+		{
+			return "This is modified!";
+		}
 		return null;
 	}
 

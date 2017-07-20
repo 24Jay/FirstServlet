@@ -1,4 +1,4 @@
-package com.head.first.servlet;
+package com.head.first.servlet.download;
 
 import java.io.IOException;
 import java.io.PrintWriter;
