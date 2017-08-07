@@ -10,5 +10,8 @@
 <%! int count=1; %>
 The page count now is :
 	<%=++count%>
+	<br>
+	<h4>scriptlet: </h4><% out.println("Hello Scriptlet!");%>
+	<h4>表达式: </h4><%= "Hello 表达式" %>
 </body>
 </html>

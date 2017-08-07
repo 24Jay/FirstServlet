@@ -1,12 +1,14 @@
 /home/jay/workspace/first.servlet/src/main/java/com/head/first/servlet/listener/ListenerServlet.java
 /home/jay/workspace/first.servlet/src/main/java/com/head/first/servlet/filter/MyHttpRequestWrapper.java
+/home/jay/workspace/first.servlet/src/main/java/com/head/first/servlet/beer/BeerSelectServlet.java
 /home/jay/workspace/first.servlet/src/main/java/com/head/first/servlet/filter/MyFilter.java
 /home/jay/workspace/first.servlet/src/main/java/com/head/first/servlet/download/DownloadServlet.java
 /home/jay/workspace/first.servlet/src/main/java/com/head/first/servlet/listener/Dog.java
 /home/jay/workspace/first.servlet/src/main/java/com/head/first/servlet/database/DatabaseServlet.java
+/home/jay/workspace/first.servlet/src/main/java/com/head/first/servlet/locale/LocaleServlet.java
+/home/jay/workspace/first.servlet/src/main/java/com/head/first/servlet/listener/MyServletContextListener.java
+/home/jay/workspace/first.servlet/src/main/java/com/head/first/servlet/beer/BeerExpert.java
 /home/jay/workspace/first.servlet/src/main/java/com/head/first/servlet/upload/UploadServlet.java
-/home/jay/workspace/first.servlet/src/main/java/com/head/first/servlet/BeerSelectServlet.java
 /home/jay/workspace/first.servlet/src/main/java/com/head/first/servlet/database/DBconnection.java
 /home/jay/workspace/first.servlet/src/main/java/com/head/first/servlet/refresh/AutoRefreshServlet.java
-/home/jay/workspace/first.servlet/src/main/java/com/head/first/servlet/listener/MyServletContextListener.java
-/home/jay/workspace/first.servlet/src/main/java/com/head/first/servlet/BeerExpert.java
+/home/jay/workspace/first.servlet/src/main/java/com/head/first/servlet/beer/Beer.java

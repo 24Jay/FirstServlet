@@ -9,6 +9,7 @@ import java.sql.Statement;
 
 import javax.naming.NamingException;
 import javax.naming.spi.DirStateFactory.Result;
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -31,12 +32,16 @@ public class DatabaseServlet extends HttpServlet
 			String sql = "select * from singers join songs join albums";
 			ResultSet res = statement.executeQuery(sql);
 
-			while (res.next())
-			{
-				out.print("<br>ID=" + res.getInt("id"));
-				out.print(",  name=" + res.getString("name"));
-				out.print(",  state=" + res.getString("state"));
-			}
+			/*
+			 * while (res.next()) { out.print("<br>ID=" + res.getInt("id"));
+			 * out.print(",  name=" + res.getString("name"));
+			 * out.print(",  state=" + res.getString("state")); }
+			 */
+			req.setAttribute("resultSet", res);
+
+			RequestDispatcher view = req.getRequestDispatcher("/dataResult");
+			view.forward(req, resp);
+
 		}
 		catch (NamingException e)
 		{

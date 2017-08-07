@@ -14,12 +14,17 @@
 		<%
 			String s = request.getParameter("color");
 			out.println("s=" + s);
-			List<String> styles = (List) request.getAttribute("styles");
-			Iterator it = styles.iterator();
-			while (it.hasNext())
-				out.print("<br> try: " + it.next());
+			com.head.first.servlet.beer.Beer sty = (com.head.first.servlet.beer.Beer)request.getAttribute("beer");
+			out.print("Expert Recommendation: "+sty.getBrand());
 		%>
 	</p>
+	<h4>使用EL和标准动作</h4>
+	<jsp:useBean id="beer" class="com.head.first.servlet.beer.Beer" scope="request"/>
+	<jsp:getProperty name="beer" property="brand"/>
+	<br>
+	<jsp:setProperty name="beer" property="brand" value="可口可乐"/>
+	<br>
+	<jsp:getProperty name="beer" property="brand"/>
 
 
 </body>

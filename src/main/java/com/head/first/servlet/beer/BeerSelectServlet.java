@@ -1,4 +1,4 @@
-package com.head.first.servlet;
+package com.head.first.servlet.beer;
 
 import java.io.IOException;
 import java.util.List;
@@ -26,16 +26,18 @@ public class BeerSelectServlet extends HttpServlet
 		// 从请求中获取参数
 		String co = req.getParameter("color");
 		BeerExpert expert = new BeerExpert();
-		List<String> brands = expert.getBrand(co);
+		Beer b = expert.getBrand(co);
+		
+		String exp= "Jay";
 
-		req.setAttribute("styles", brands);
+		req.setAttribute("expert", exp);
+		req.setAttribute("beer", b);
 		//PrintWriter out = resp.getWriter();
 		//out.println(req.getAttribute("styles"));
 		
 //		MyHttpRequestWrapper requestWrapper = new MyHttpRequestWrapper(req);
 		 RequestDispatcher view = req.getRequestDispatcher("/myreslt");
 		 view.forward(req, resp);
-		 
 
 		// resp.setContentType("text/html");
 		/*
